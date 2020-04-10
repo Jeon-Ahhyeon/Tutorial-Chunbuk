@@ -11,27 +11,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main() {  //ap1.c¿Í À¯»ç  listÀÇ ÁÖ¼Ò¸¦ ÀÚ¼¼È÷ º¸´Â ÄÚµå
-	int list[5];   //list[5]¹è¿­ ¼±¾ð
-	int *plist[5];  //*plist[5] Æ÷ÀÎÅÍ ¹è¿­ ¼±¾ð
+void main() {  //ap1.cì™€ ìœ ì‚¬  listì˜ ì£¼ì†Œë¥¼ ìžì„¸ížˆ ë³´ëŠ” ì½”ë“œ
+	int list[5];   //list[5]ë°°ì—´ ì„ ì–¸
+	int *plist[5];  //*plist[5] í¬ì¸í„° ë°°ì—´ ì„ ì–¸
 
-	list[0]=10;  //list[0]¿¡ 10À» ´ëÀÔ
-	list[1]=11;   //list [1]¿¡ 11 ´ëÀÔ
+	list[0]=10;  //list[0]ì— 10ì„ ëŒ€ìž…
+	list[1]=11;   //list [1]ì— 11 ëŒ€ìž…
 
-	plist[0] = (int*)malloc(sizeof(int));   //Æ÷ÀÎÅÍ ¹è¿­ plist[0]¿¡ intÇü »çÀÌÁîÀÇ ¸Þ¸ð¸®¸¦ µ¿ÀûÀ¸·Î ÇÒ´çÇØÁØ´Ù.
+	plist[0] = (int*)malloc(sizeof(int));   //í¬ì¸í„° ë°°ì—´ plist[0]ì— intí˜• ì‚¬ì´ì¦ˆì˜ ë©”ëª¨ë¦¬ë¥¼ ë™ì ìœ¼ë¡œ í• ë‹¹í•´ì¤€ë‹¤.
 
-	printf("¼ÒÇÁÆ®¿þ¾îÇÐ°ú 2018068005 Àü¾ÆÇö\n");
+	printf("ì†Œí”„íŠ¸ì›¨ì–´í•™ê³¼ 2018068005 ì „ì•„í˜„\n");
 
-	printf("list[0] \t=%d\n\n",list[0]);   //list[0]ÀÇ °ªÀ» Ãâ·Â  >>10
-	printf("address of list \t = %p\n",list);  //list¹è¿­ÀÇ ÀÌ¸§Àº ¹è¿­À» ½ÃÀÛÁÖ¼Ò¸¦ °¡Áö°í ÀÖ´Ù. >>0061FF0C
-	printf("address of list[0] \t = %p\n",&list[0]);  //list[0]ÀÇ ÁÖ¼Ò´Â ¹è¿­ÀÇ ½ÃÀÛÁÖ¼Ò¿Í µ¿ÀÏÇÏ´Ù >>0061FF0C
-	printf("address of list + 0 \t = %p\n",list+0);    //list +0ÀÇ ÁÖ¼Ò¸¦ Ãâ·Â  intÇü »çÀÌÁî Æ÷ÀÎÅÍ ¹è¿­ÀÌ¹Ç·Î 4¾¿ Áõ°¡ÇÏÁö¸¸ 0À» ´õÇßÀ¸¹Ç·Î ¹è¿­ÀÇ ÁÖ¼Ò°ª°ú µ¿ÀÏ >>0061FF0C
-	printf("address of list + 1 \t = %p\n",list+1);  //list +1 Àº ¹è¿­ÀÇ ½ÃÀÛÁÖ¼Ò¿¡  int Çü »çÀÌÁî 4¸¦ ÇÑ¹ø ´õÇØÁØ °ªÀ¸·Î list[1]ÀÇ ÁÖ¼Ò°ª°ú µ¿ÀÏÇÏ´Ù.>>0061FF10
-	printf("address of list + 2 \t = %p\n",list+2);  //list +2 Àº ¹è¿­ÀÇ ½ÃÀÛÁÖ¼Ò¿¡  int Çü »çÀÌÁî 4¸¦ µÎ¹ø ´õÇØÁØ °ªÀ¸·Î list[2]ÀÇ ÁÖ¼Ò°ª°ú µ¿ÀÏÇÏ´Ù.>>0061FF14
-	printf("address of list + 3 \t = %p\n",list+3);//list +3 Àº ¹è¿­ÀÇ ½ÃÀÛÁÖ¼Ò¿¡  int Çü »çÀÌÁî 4¸¦ ¼¼¹ø ´õÇØÁØ °ªÀ¸·Î list[3]ÀÇ ÁÖ¼Ò°ª°ú µ¿ÀÏÇÏ´Ù.>>0061FF18
-	printf("address of list + 4 \t = %p\n",list+4);//list +4 Àº ¹è¿­ÀÇ ½ÃÀÛÁÖ¼Ò¿¡  int Çü »çÀÌÁî 4¸¦ ³×¹ø ´õÇØÁØ °ªÀ¸·Î list[4]ÀÇ ÁÖ¼Ò°ª°ú µ¿ÀÏÇÏ´Ù.>>0061FF1C
-	printf("address of list[4] \t = %p\n",&list[4]);  //list[4]ÀÇ µ¥ÀÌÅÍ°¡ µé¾îÀÖ´Â °÷ÀÇ ÁÖ¼Ò Ãâ·Â >>0061FF1C   /*À§ÀÇ list + 4¿Í µ¿ÀÏÇÏ´Ù.
+	printf("list[0] \t=%d\n\n",list[0]);   //list[0]ì˜ ê°’ì„ ì¶œë ¥  >>10
+	printf("address of list \t = %p\n",list);  //listë°°ì—´ì˜ ì´ë¦„ì€ ë°°ì—´ì„ ì‹œìž‘ì£¼ì†Œë¥¼ ê°€ì§€ê³  ìžˆë‹¤. >>0061FF0C
+	printf("address of list[0] \t = %p\n",&list[0]);  //list[0]ì˜ ì£¼ì†ŒëŠ” ë°°ì—´ì˜ ì‹œìž‘ì£¼ì†Œì™€ ë™ì¼í•˜ë‹¤ >>0061FF0C
+	printf("address of list + 0 \t = %p\n",list+0);    //list +0ì˜ ì£¼ì†Œë¥¼ ì¶œë ¥  intí˜• ì‚¬ì´ì¦ˆ í¬ì¸í„° ë°°ì—´ì´ë¯€ë¡œ 4ì”© ì¦ê°€í•˜ì§€ë§Œ 0ì„ ë”í–ˆìœ¼ë¯€ë¡œ ë°°ì—´ì˜ ì£¼ì†Œê°’ê³¼ ë™ì¼ >>0061FF0C
+	printf("address of list + 1 \t = %p\n",list+1);  //list +1 ì€ ë°°ì—´ì˜ ì‹œìž‘ì£¼ì†Œì—  int í˜• ì‚¬ì´ì¦ˆ 4ë¥¼ í•œë²ˆ ë”í•´ì¤€ ê°’ìœ¼ë¡œ list[1]ì˜ ì£¼ì†Œê°’ê³¼ ë™ì¼í•˜ë‹¤.>>0061FF10
+	printf("address of list + 2 \t = %p\n",list+2);  //list +2 ì€ ë°°ì—´ì˜ ì‹œìž‘ì£¼ì†Œì—  int í˜• ì‚¬ì´ì¦ˆ 4ë¥¼ ë‘ë²ˆ ë”í•´ì¤€ ê°’ìœ¼ë¡œ list[2]ì˜ ì£¼ì†Œê°’ê³¼ ë™ì¼í•˜ë‹¤.>>0061FF14
+	printf("address of list + 3 \t = %p\n",list+3);//list +3 ì€ ë°°ì—´ì˜ ì‹œìž‘ì£¼ì†Œì—  int í˜• ì‚¬ì´ì¦ˆ 4ë¥¼ ì„¸ë²ˆ ë”í•´ì¤€ ê°’ìœ¼ë¡œ list[3]ì˜ ì£¼ì†Œê°’ê³¼ ë™ì¼í•˜ë‹¤.>>0061FF18
+	printf("address of list + 4 \t = %p\n",list+4);//list +4 ì€ ë°°ì—´ì˜ ì‹œìž‘ì£¼ì†Œì—  int í˜• ì‚¬ì´ì¦ˆ 4ë¥¼ ë„¤ë²ˆ ë”í•´ì¤€ ê°’ìœ¼ë¡œ list[4]ì˜ ì£¼ì†Œê°’ê³¼ ë™ì¼í•˜ë‹¤.>>0061FF1C
+	printf("address of list[4] \t = %p\n",&list[4]);  //list[4]ì˜ ë°ì´í„°ê°€ ë“¤ì–´ìžˆëŠ” ê³³ì˜ ì£¼ì†Œ ì¶œë ¥ >>0061FF1C   /*ìœ„ì˜ list + 4ì™€ ë™ì¼í•˜ë‹¤.
 
 
-	free(plist[0]);//µ¿ÀûÀ¸·Î ÇÒ´çÇØÁØ ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇØ´©¾î ¸Þ¸ð¸®ÀÇ È¿À²¼ºÀ» ³ôÀÎ´Ù.
+	free(plist[0]);//ë™ì ìœ¼ë¡œ í• ë‹¹í•´ì¤€ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•´ì–´ ë©”ëª¨ë¦¬ì˜ íš¨ìœ¨ì„±ì„ ë†’ì¸ë‹¤.
 }
